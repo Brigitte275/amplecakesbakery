@@ -1,0 +1,2071 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Cakes | Ample Cakes</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    color: #222;
+}
+/* =========================================
+   TOP NAVIGATION
+========================================= */
+
+.main-header {
+    width: 100%;
+    height: 58px;
+    background: #2d1405;
+    display: flex;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    padding: 0 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo {
+    color: #fff;
+
+    text-decoration: none;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 25px;
+
+    white-space: nowrap;
+}
+
+.logo span {
+    color: #d18a2a;
+
+    font-style: italic;
+}
+
+
+/* =========================================
+   NAVIGATION LINKS
+========================================= */
+
+.main-nav {
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+}
+
+.main-nav a {
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 20px;
+
+    color: #ddd;
+
+    text-decoration: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 14px;
+
+    letter-spacing: 0.5px;
+
+    transition: 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: #fff;
+
+    background: rgba(255,255,255,0.05);
+}
+
+
+/* =========================================
+   ORDER NOW BUTTON
+========================================= */
+
+.main-nav .order-btn {
+    background: #c87921;
+
+    color: #fff;
+
+    font-weight: bold;
+
+    padding: 0 25px;
+
+    margin-left: 0;
+}
+
+.main-nav .order-btn:hover {
+    background: #d88a2b;
+
+    color: #fff;
+}
+
+
+/* =========================================
+   CONTACT / INFO BAR
+========================================= */
+
+.info-bar {
+    width: 100%;
+    height: 36px;
+    background: #713108;
+    color: #fff;
+
+    position: fixed;
+    top: 58px;
+    left: 0;
+    z-index: 999;
+}
+.catalogue {
+    padding-top: 94px;
+}
+
+.info-container {
+    width: 100%;
+    max-width: 1400px;
+
+    height: 100%;
+
+    margin: 0 auto;
+
+    padding: 0 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 12px;
+}
+
+
+.info-container a {
+    color: #e6a23c;
+
+    text-decoration: none;
+}
+
+.info-container a:hover {
+    color: #fff;
+}
+
+
+.location-info,
+.contact-info {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.divider {
+    color: #fff;
+}
+
+
+/* =========================================
+   YOUR CATEGORY PAGE
+========================================= */
+
+.shop-page {
+    display: grid;
+
+    grid-template-columns: 240px minmax(0, 1fr);
+
+    gap: 25px;
+
+    width: 100%;
+
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    padding: 28px 20px 50px;
+}
+/* =========================
+   CATALOGUE
+========================= */
+
+.catalogue {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    min-height: 100vh;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    padding: 35px 30px;
+    background: #fff;
+}
+
+.sidebar h2 {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    margin: 0 0 25px;
+    color: #261308;
+}
+
+.category-btn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    border: none;
+    background: transparent;
+    padding: 9px 0;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.category-btn:hover {
+    color: #b66b2c;
+}
+
+.category-btn.active {
+    color: #b66b2c;
+    font-weight: 600;
+}
+
+.sidebar-line {
+    height: 1px;
+    background: #d99a62;
+    margin-top: 30px;
+    width: 100%;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.catalogue-main {
+    padding: 35px 60px 60px 30px;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.breadcrumb {
+    font-size: 14px;
+    color: #777;
+}
+
+.breadcrumb span {
+    color: #b66b2c;
+}
+
+.catalogue-title {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0 0 25px;
+    color: #261308;
+}
+
+/* =========================
+   CAKE GRID
+========================= */
+
+.cake-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.cake-card {
+    background: #FFCC99;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    cursor: pointer;
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+    position: relative;
+}
+
+.cake-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.cake-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    background: #FFCC99;
+    cursor: pointer;
+    transition: transform 0.25s ease;
+}
+
+.cake-info {
+    padding: 13px 15px 16px;
+}
+
+.cake-name {
+    font-size: 15px;
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+
+.cake-price {
+    color: #b66b2c;
+    font-size: 14px;
+}
+.cake-card img {
+    cursor: pointer;
+    transition: transform 0.25s ease;
+}
+
+.cake-card img:hover {
+    transform: scale(1.02);
+}
+
+/* Zoom / quick-view icon on every cake card */
+.card-zoom-icon{
+    position:absolute;
+    top:12px;
+    right:12px;
+    width:34px;
+    height:34px;
+    background:#fff;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 3px 10px rgba(0,0,0,.18);
+    z-index:3;
+    cursor:pointer;
+    transition:.25s;
+}
+.card-zoom-icon:hover{
+    background:#b66b2c;
+}
+.card-zoom-icon:hover svg{
+    stroke:#fff;
+}
+.card-zoom-icon svg{
+    width:16px;
+    height:16px;
+    stroke:#b66b2c;
+    fill:none;
+    stroke-width:2.4;
+    stroke-linecap:round;
+    transition:.25s;
+}
+/* =========================
+   EMPTY STATE
+========================= */
+
+.no-cakes {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px;
+    color: #777;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+
+    .cake-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+@media (max-width: 800px) {
+
+    .catalogue {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        padding: 25px;
+    }
+
+    .sidebar h2 {
+        margin-bottom: 15px;
+    }
+
+    .category-btn {
+        display: inline-block;
+        width: auto;
+        margin-right: 18px;
+    }
+
+    .catalogue-main {
+        padding: 25px;
+    }
+
+    .cake-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .cake-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cake-card img {
+        height: 220px;
+    }
+
+}
+
+
+/* =========================
+   CAKE POPUP / LIGHTBOX
+   Shows the COMPLETE cake photo
+   without cropping rectangular cakes
+========================= */
+
+.cake-popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.78);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+    z-index: 9999;
+}
+
+.cake-popup.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.popup-content {
+    position: relative;
+    width: min(1000px, 94vw);
+    max-height: 92vh;
+    background: #FFD8B1;
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    align-items: stretch;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    transform: translateY(15px) scale(0.98);
+    transition: transform 0.25s ease;
+}
+
+.cake-popup.active .popup-content {
+    transform: translateY(0) scale(1);
+}
+
+/* The full original photo stays visible */
+#popupImage {
+    width: 58%;
+    height: auto;
+    max-height: 88vh;
+    min-height: 0;
+    object-fit: contain;
+    object-position: center;
+    background: #f7f4f1;
+    display: block;
+}
+
+.popup-details {
+    width: 42%;
+    padding: 42px 34px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.popup-details h2 {
+    margin: 0 0 18px;
+    color: #261308;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 28px;
+    line-height: 1.3;
+}
+
+#popupPrice {
+    margin: 0 0 28px;
+    color: #b66b2c;
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.popup-close {
+    position: fixed;
+    top: 18px;
+    right: 25px;
+    z-index: 10001;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #fff;
+    color: #2d1405;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: 0.2s ease;
+}
+
+.popup-close:hover {
+    background: #c87921;
+    color: #fff;
+}
+
+.popup-whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    width: 100%;
+    min-height: 50px;
+    padding: 12px 20px;
+    margin-top: 11px;
+    border-radius: 7px;
+    background: #25D366;
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.popup-whatsapp-btn:hover {
+    background: #1da851;
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.whatsapp-icon {
+    width: 22px;
+    height: 22px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    line-height: 1;
+}
+
+@media (max-width: 700px) {
+    .cake-popup {
+        padding: 12px;
+    }
+
+    .popup-content {
+        width: 100%;
+        max-height: 94vh;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        border-radius: 14px;
+    }
+
+    #popupImage {
+        width: 100%;
+        height: auto;
+        max-height: 62vh;
+        min-height: 0;
+        object-fit: contain;
+        border-radius: 14px 14px 0 0;
+    }
+
+    .popup-details {
+        width: 100%;
+        padding: 22px 20px 24px;
+    }
+
+    .popup-details h2 {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    #popupPrice {
+        font-size: 17px;
+        margin-bottom: 18px;
+    }
+
+    .popup-close {
+        top: 8px;
+        right: 8px;
+        width: 38px;
+        height: 38px;
+        font-size: 27px;
+    }
+}
+/* =========================
+   CAKE WEIGHTS & PRICES
+========================= */
+
+.cake-weights {
+    margin-top: 28px;
+    padding-top: 22px;
+    border-top: 1px solid #d99a62;
+}
+
+.cake-weights h3 {
+    margin: 0 0 16px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    color: #261308;
+}
+
+.weight-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.weight-price span:last-child {
+    color: #b66b2c;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.cookie-flavours {
+    margin: 0 0 14px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #333;
+}
+
+/* =========================================
+   MOBILE TOP BAR FIX
+========================================= */
+
+@media (max-width: 600px) {
+
+    /* ---------- MAIN HEADER ---------- */
+
+    .main-header {
+        height: 72px;
+    }
+
+    .nav-container {
+        width: 100%;
+        max-width: none;
+        padding: 0 18px;
+        box-sizing: border-box;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* ---------- LOGO ---------- */
+
+    .logo {
+        font-size: 22px;
+        line-height: 1.05;
+        white-space: normal;
+        width: 85px;
+        flex-shrink: 0;
+    }
+
+    .logo span {
+        display: block;
+    }
+
+    /* ---------- NAVIGATION ---------- */
+
+    .main-nav {
+        height: 72px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex: 1;
+        min-width: 0;
+    }
+
+    .main-nav a {
+        height: 72px;
+        padding: 0 8px;
+
+        font-size: 11px;
+        letter-spacing: 0.3px;
+
+        white-space: nowrap;
+    }
+
+    /* Prevent ORDER NOW from becoming huge */
+    .main-nav .order-btn {
+        padding: 0 10px;
+        margin-left: 2px;
+    }
+
+
+    /* ---------- CONTACT BAR ---------- */
+
+    .info-bar {
+        top: 72px;
+        height: auto;
+        min-height: 62px;
+    }
+
+    .info-container {
+        min-height: 62px;
+        height: auto;
+
+        padding: 7px 18px;
+        box-sizing: border-box;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        gap: 4px;
+
+        font-size: 11px;
+        line-height: 1.4;
+        text-align: center;
+    }
+
+    .location-info,
+    .contact-info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+
+        width: 100%;
+        flex-wrap: nowrap;
+    }
+
+    /* ---------- PAGE CONTENT ---------- */
+
+    .catalogue {
+        padding-top: 134px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="cakePopup" class="cake-popup">
+
+    <span
+        class="popup-close"
+        onclick="closePopup()"
+    >
+        &times;
+    </span>
+
+    <div class="popup-content">
+
+        <img
+            id="popupImage"
+            src=""
+            alt=""
+        >
+
+        <div class="popup-details">
+
+            <h2 id="popupName"></h2>
+
+            <p id="popupPrice"></p>
+
+            <a
+                id="popupWhatsapp"
+                class="popup-whatsapp-btn"
+                href="#"
+                target="_blank"
+                rel="noopener"
+            >
+                <span class="whatsapp-icon">◔</span>
+                ORDER ON WHATSAPP
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+    <!-- =========================
+     TOP NAVIGATION BAR
+========================= -->
+
+<header class="main-header">
+
+    <div class="nav-container">
+
+        <!-- LOGO -->
+        <a href="index.html" class="logo">
+            <span>Ample</span>
+            Cakes
+        </a>
+
+
+        <!-- NAVIGATION -->
+        <nav class="main-nav">
+
+            <a href="index.html">HOME</a>
+
+            <a href="index.html#how-to-order">HOW TO ORDER</a>
+
+            <a href="index.html#order" class="order-btn">
+                ORDER NOW
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     CONTACT / INFO BAR
+========================= -->
+
+<div class="info-bar">
+
+    <div class="info-container">
+
+        <div class="location-info">
+            <span>Home Baker &middot; Nyeri, Kenya</span>
+            <span class="divider">|</span>
+
+            <a href="mailto:iannotatobree27@gmail.com">
+                iannotatobree27@gmail.com
+            </a>
+        </div>
+
+
+        <div class="contact-info">
+
+            <span>
+                Call:
+                <a href="tel:+254759558411">
+                    0759 558 411
+                </a>
+            </span>
+
+            <span class="divider">|</span>
+
+            <span>
+                WhatsApp:
+                <a href="https://wa.me/254775789757" target="_blank">
+                    0775 789 757
+                </a>
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="catalogue">
+
+    <!-- =========================
+         LEFT SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <h2>CAKE CATEGORIES</h2>
+
+        <button class="category-btn active"
+                onclick="showCategory('Chocolate Cakes', this)">
+            Chocolate Cakes
+        </button>
+
+        <button class="category-btn"
+                onclick="showCategory('Vanilla Cakes', this)">
+            Vanilla Cakes
+        </button>
+
+        <button class="category-btn"
+                onclick="showCategory('Marble Cakes', this)">
+            Marble Cakes
+        </button>
+
+        <button class="category-btn"
+                onclick="showCategory('Fruit Cakes', this)">
+            Fruit Cakes
+        </button>
+
+        <button class="category-btn"
+                onclick="showCategory('Sweet Pies', this)">
+           Sweet Pies
+        </button>
+
+        <button class="category-btn"
+                onclick="showCategory('Christmas and Easter Cakes', this)">
+            Christmas and Easter Cakes
+        </button>
+
+        <button class="category-btn"
+                onclick="showCategory('Yule Log Cakes and Swiss Rolls', this)">
+            Yule Log Cakes and Swiss Rolls
+        </button>
+<div class="sidebar-line"></div>
+
+<!-- CAKE WEIGHTS & PRICES -->
+<div class="cake-weights">
+
+    <h3>CAKE WEIGHTS &amp; PRICES</h3>
+
+    <div class="weight-price">
+        <span>0.5 kg</span>
+        <span>KShs 1,250</span>
+    </div>
+
+    <div class="weight-price">
+        <span>1 kg</span>
+        <span>KShs 2,500</span>
+    </div>
+
+    <div class="weight-price">
+        <span>2 kg</span>
+        <span>KShs 4,500</span>
+    </div>
+
+    <div class="weight-price">
+        <span>3 kg</span>
+        <span>KShs 7,500</span>
+    </div>
+
+    <div class="weight-price">
+        <span>Fruit Cakes</span>
+        <span>KShs 5,000</span>
+    </div>
+
+    <div class="weight-price">
+        <span>Sweet Pies</span>
+        <span>KShs 5,000</span>
+    </div>
+
+<div class="weight-price">
+        <span>SwissRolls</span>
+        <span>KShs 2,000</span>
+    </div>
+
+    <div class="weight-price">
+        <span>Log Cake</span>
+        <span>KShs 2,500 - KShs 4,000</span>
+    </div>
+
+    <h3>CUP CAKES</h3>
+<p class="cookie-flavours">
+        <strong>Simple Cupcakes</strong><br>
+        Vanilla, Orange, Strawberry, Chocolate, Marble, Blueberry, Lemon, Funfetti, Coconut, Passion, Oreo
+    </p>
+
+<div class="weight-price">
+        <span>1 Pcs</span>
+        <span>KShs 70/=</span>
+    </div>
+
+    <div class="weight-price">
+        <span>4 Pcs</span>
+        <span>KShs 280/=</span>
+    </div>
+
+    <div class="weight-price">
+        <span>6 Pcs</span>
+        <span>KShs 420/=</span>
+    </div>
+
+    <div class="weight-price">
+        <span>8 Pcs</span>
+        <span>KShs 560/=</span>
+    </div>
+
+    <div class="weight-price">
+        <span>12 Pcs</span>
+        <span>KShs 840/=</span>
+    </div>
+
+<p class="cookie-flavours">
+        <strong>Decorated Cupcakes</strong><br>
+    </p>
+
+<div class="weight-price">
+        <span>1 Pcs</span>
+        <span>KShs 100/=</span>
+    </div>
+
+    <div class="weight-price">
+        <span>4 Pcs</span>
+        <span>KShs 400/=</span>
+    </div>
+
+    <div class="weight-price">
+        <span>6 Pcs</span>
+        <span>KShs 600/=</span>
+    </div>
+
+    <div class="weight-price">
+        <span>8 Pcs</span>
+        <span>KShs 800/=</span>
+    </div>
+
+    <div class="weight-price">
+        <span>12 Pcs</span>
+        <span>KShs 1200/=</span>
+    </div>
+
+    <h3>COOKIES</h3>
+
+    <p class="cookie-flavours">
+        <strong>Simple Cookies:</strong><br>
+        Vanilla, Ginger, Ginger Bread, Almond, Butter Cookies, Sugar Cookies, Choco Chip
+    </p>
+
+    <div class="weight-price">
+        <span>1 cookie</span>
+        <span>KShs 45/=</span>
+    </div>
+
+    <div class="weight-price">
+        <span>6 cookies</span>
+        <span>KShs 270/=</span>
+    </div>
+
+    <div class="weight-price">
+        <span>12 cookies</span>
+        <span>KShs 540/=</span>
+    </div>
+
+    <p class="cookie-flavours">
+        <strong>Decorated Cookies:</strong><br>
+        Double Almond Cookies, Double Sugar Cookies, Double Choco Cookies, Double Ginger Cookies
+    </p>
+
+    <div class="weight-price">
+        <span>1 cookie</span>
+        <span>KShs 100/=</span>
+    </div>
+
+    <div class="weight-price">
+        <span>6 cookies</span>
+        <span>KShs 600/=</span>
+    </div>
+
+    <div class="weight-price">
+        <span>12 cookies</span>
+        <span>KShs 1,200/=</span>
+    </div>
+
+</div>
+
+</aside>
+
+
+    <!-- =========================
+         MAIN CATALOGUE
+    ========================== -->
+
+    <main class="catalogue-main">
+
+        <div class="top-bar">
+
+            <div class="breadcrumb">
+                Home &nbsp; / &nbsp;
+                <span id="breadcrumbCategory">
+                    Chocolate Cakes
+                </span>
+            </div>
+
+        </div>
+
+        <h1 class="catalogue-title" id="categoryTitle">
+            Chocolate Cakes
+        </h1>
+
+        <div class="cake-grid" id="cakeGrid"></div>
+
+    </main>
+
+</div>
+
+
+<script>
+
+/* =========================================
+   ALL CAKES
+========================================= */
+
+const cakes = {
+
+    "Chocolate Cakes": [
+
+        {
+            name: "Chocolate Butterfly Cake",
+            price: "KShs 2,500.00",
+            image: "CHOCOLATE/ChocolateButterflyCake.png"
+        },
+
+        {
+            name: "Chocolate Cake with Butter Cream Frosting",
+            price: "KShs 2,500.00",
+            image: "CHOCOLATE/ChocolateCakewithButterCreamFrosting.jpeg"
+        },
+
+        {
+            name: "Chocolate Cake with Chocolate Ganache",
+            price: "KShs 2,500.00",
+            image: "CHOCOLATE/ChocolateCakewithChocolateGanache.jpeg"
+        },
+
+        {
+            name: "Chocolate Cake with Gold Decoration",
+            price: "KShs 2,500.00",
+            image: "CHOCOLATE/ChocolateCakewithGoldDecoration.jpg"
+        },
+
+        {
+            name: "Chocolate Cake with Rose Decorations",
+            price: "KShs 2,500.00",
+            image: "CHOCOLATE/ChocolateCakewithRosedecorations.jpeg"
+        },
+
+        {
+            name: "Chocolate Cake with Whipping Cream",
+            price: "KShs 2,500.00",
+            image: "CHOCOLATE/ChocolateCakewithWhippingCream.jpeg"
+        },
+
+        {
+            name: "Chocolate Gemini Theme Cake",
+            price: "KShs 2,500.00",
+            image: "CHOCOLATE/ChocolateGeminiThemeCake.jpeg"
+        },
+
+        {
+            name: "Elegant Ivory Rosette Cake",
+            price: "KShs 2,500.00",
+            image: "CHOCOLATE/ElegantIvoryRosetteCake.png"
+        },
+
+        {
+            name: "Elegant White and Gold Chocolate Cake",
+            price: "KShs 4,500.00",
+            image: "CHOCOLATE/ElegantWhiteandGoldChocolate2kgBirthdayCake.png"
+        },
+        {
+            name: "Chocolate Graduation Cake with Chocolate Sprinkles",
+            price: "KShs 4,500.00",
+            image: "CHOCOLATE/GraduationChocolateCakewithChocolateSprinkles.jpeg"
+        },
+        {
+            name: "Simple Chocolate Cake",
+            price: "KShs 2,500.00",
+            image: "CHOCOLATE/SimpleChocolateCake.png"
+        },
+        {
+            name: "Simple Chocolate Cake With Chocolate Ganache",
+            price: "KShs 2,500.00",
+            image: "CHOCOLATE/SimpleChocolateCakeWithChocolateGanache.jpeg"
+        },
+        {
+            name: "Simple Chocolate Cake with Strawberry cream filling and Chocolate Ganache",
+            price: "KShs 2,500.00",
+            image: "CHOCOLATE/SimpleChocolateCakewithStrawberrycreamfillingandChocolateGanache.png"
+        }, 
+        {
+            name: "Simple Happy Birthday Chocolate Cake with Chocolate Ganache",
+            price: "KShs 2,500.00",
+            image: "CHOCOLATE/SimpleHappyBirthdayChocolateCakewithChocolateGanache.png"
+        },
+        {
+            name: "2kg Chocolate Mint Graduation Cake",
+            price: "KShs 4,500.00",
+            image: "CHOCOLATE/2kgChocolateGraduationCake.png"
+        },
+        {
+            name: "2kg Heart Shaped Chocolate Cake",
+            price: "KShs 4,500.00",
+            image: "CHOCOLATE/2kgHeartShapedChocolateCake.jpeg"
+        },
+        {
+            name: "Chocolate Bundt Cake with Chocolate Ganache and Sprinkles",
+            price: "KShs 2,500.00",
+            image: "CHOCOLATE/ChocolateBundtCakewithChocolateGanacheandSprinkles.jpeg"
+        },     
+        {
+            name: "Chocolate Cake with simple blue Rosettes",
+            price: "KShs 2,500.00",
+            image: "CHOCOLATE/ChocolateCakewithsimpleblueRosettes.jpeg"
+        },
+        {
+            name: "StrawBerry Chocolate Cake",
+            price: "KShs 2,500.00",
+            image: "CHOCOLATE/StrawBerryChocolateCake.png"
+        },
+        {
+            name: "Brown and Yellow Chocolate Theme Cake",
+            price: "KShs 2,500.00",
+            image: "CHOCOLATE/BrownandYellowChocolateThemeCake.png"
+        },
+        {
+            name: "Yellow Theme Chocolate Cake",
+            price: "KShs 2,500.00",
+            image: "CHOCOLATE/YellowThemeChocolateCake.jpeg"
+        },  
+        {
+            name: "Chocolate Cake with Chocolate Ganache Glaze",
+            price: "KShs 2,500.00",
+            image: "CHOCOLATE/ChocolateCakewithChocolateGanacheGlaze.jpeg"
+        }, 
+        {
+            name: "Happy Birthday Chocolate Heart Cake with white Fondant",
+            price: "KShs 2,500.00",
+            image: "CHOCOLATE/HappyBirthDayChocolateHeartCake.jpeg"
+        },
+        {
+            name: "Green & Gold Floral Birthday Cake",
+            price: "KShs 2,500.00",
+            image: "CHOCOLATE/HappyBirthDay03.jpeg"
+        },
+        {
+            name: "Basket weave Chocolate Cake",
+            price: "KShs 2,500.00",
+            image: "CHOCOLATE/BasketweaveChocolateCake.jpg"
+        },
+        {
+            name: "Rustic Chocolate Birthday Cake",
+            price: "KShs 2,500.00",
+            image: "CHOCOLATE/RusticChocolateBirthdayCake.png"
+        },
+        
+        {
+            name: "Chocolate Birthday Cake",
+            price: "KShs 2,500.00",
+            image: "CHOCOLATE/ChocolateBirthdayCake.png"
+        },
+        {
+            name: "Pre-cut Treats",
+            price: "<p>KSh 70 per piece<br>50 pieces KSh 3,500<br>Pre-Cut Slices Included with Every Cake Order<br>No Cutting, No Hassle<br>Neatly packed in bags of your preferred colour</p>",
+            image: "VANILLA/Pre-cuts.jpeg"
+        },
+    ],
+
+
+    "Vanilla Cakes": [
+
+        {
+            name: "Beautiful Bible-Shaped Celebration Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/BeautifulBible-Shaped Celebration Cake.jpeg"
+        },
+
+        {
+            name: "Boy Twin Birthday Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/BoyTwinsiblingBirthdayCake.jpeg"
+        },
+
+        {
+            name: "Girl Twin Birthday Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/GirlTwinsiblingBirthdayCake.jpeg"
+        },
+
+        {
+            name: "Happy Birthday Cross Shaped Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/HappyBirthdayCrossCake.jpeg"
+        },
+        {
+            name: "Heart shaped Valentine Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/HeartshapedValentineCake.jpeg"
+        },
+
+        {
+            name: "Vanilla 60th Retirement and Happy Birthday Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/Vanilla60thRetirementandHappyBirthdayCake.jpeg"
+        },
+
+        {
+            name: "Vanilla and Oreo Elena of Avalor Theme Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/VanillaandOreoElenaofAvalorThemeCake.jpeg"
+        },
+
+        {
+            name: "Vanilla Cake with Lemon Glaze",
+            price: "KShs 2,500.00",
+            image: "VANILLA/VanillaCakewithLemonGlaze.jpeg"
+        },
+
+        {
+            name: "Vanilla Garden Themed 2kg Cake",
+            price: "KShs 4,500.00",
+            image: "VANILLA/VanillaGardenthemed2kgCake.jpeg"
+        },
+
+        {
+            name: "Vanilla Graduation with Rosettes",
+            price: "KShs 4,500.00",
+            image: "VANILLA/VanillaGraduationwithRosettes.jpeg"
+        },
+        {
+            name: "Vanilla Holy Communion 2kg Cake",
+            price: "KShs 4,500.00",
+            image: "VANILLA/VanillaHolyCommunion2kgCake.png"
+        },
+        {
+            name: "Vanilla Holy Confirmation 2kg Cake",
+            price: "KShs 4,500.00",
+            image: "VANILLA/VanillaHolyConfirmation2kgCake.jpeg"
+        },
+        {
+            name: "Vanilla Oreo Birthday Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/VanillaOreoBirthdayCake.jpeg"
+        },
+        {
+            name: "Vanilla with pink and Orange Rosette",
+            price: "KShs 2,500.00",
+            image: "VANILLA/VanillawithRosette.jpg"
+        },
+        {
+            name: "70th Birthday Floral Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/70thBirthdayFloralCake 🎂.jpeg"
+        },
+        {
+            name: "2kg Pastel Floral Graduation Cake",
+            price: "KShs 4,500.00",
+            image: "VANILLA/PastelFloralGraduationCake 🎓🌸.jpeg"
+        },
+        {
+            name: "Classic Funfetti Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/ClassicFunfettiCake ✨.png"
+        },
+        {
+            name: "Pink and Turquoise Rosette Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/PinkandTurquoiseRosetteCake 🌸.jpeg"
+        },
+        {
+            name: "Pineapple Upside-Down Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/PineappleUpside-DownCake 🍍.png"
+        },
+        {
+            name: "Elegant Graduation Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/ElegantGraduationCake 🎓.jpeg"
+        },
+        {
+            name: "Pink Birthday Heart Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/PinkBirthdayHeartCake 💕.jpeg"
+        },  
+        {
+            name: "Spider-Man Birthday Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/Spider-ManBirthdayCake 🕷️.jpeg"
+        },
+        {
+            name: "Yellow and Chocolate Oreo Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/YellowandChocolateOreoCake 🍫.png"
+        },
+        {
+            name: "Pink Floral Birthday Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/PinkFloralBirthdayCake.png"
+        },
+        {
+            name: "Simple Wedding Bible Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/SimpleWeddingBibleCake.jpg"
+        },
+        {
+            name: "70th Birthday Floral Celebration Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/70thBirthdayFloralCelebrationCake.jpeg"
+        },
+      {
+            name: "Pink Rose Celebration Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/PinkRoseCelebrationCake.png"
+        },
+        {
+            name: "Vanilla Cake with Purple Rosettes",
+            price: "KShs 2,500.00",
+            image: "VANILLA/VanillaCakewithPurpleRosettes.jpg"
+        },
+        {
+            name: "Simple Vanilla Cake with white Fondant and Floral Decoraction",
+            price: "KShs 2,500.00",
+            image: "VANILLA/SimpleVanillaCakewithwhiteFondantandFloralDecoraction.jpg"
+        },
+        {
+            name: "Simple Vanilla Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/SimpleVanillaCake.jpg"
+        },
+        {
+            name: "Vanilla Cake with Orange Blossom Lattice Decoration",
+            price: "KShs 2,500.00",
+            image: "VANILLA/VanillaCakewithOrangeBlossomLatticeDecoration.png"
+        },
+        {
+            name: "Pink and White Rosette Vanilla Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/PinkandWhiteRosetteVanillaCake.jpg"
+        },
+        {
+            name: "Floral Congratulations Birthday Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/FloralCongratulationsBirthdayCake.png"
+        },
+        {
+            name: "Elegant Red and White Celebration Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/ElegantRedandWhiteCelebrationCake.png"
+        },
+        {
+            name: "Homemade Tea Time Celebration Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/HomemadeTeaTimeCelebrationCake.png"
+        },
+        {
+            name: "Purple and Green Celebration Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/PurpleandGreenCelebrationCake.png"
+        },
+        {
+            name: "Pink-Trimmed Aqua Birthday Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/Pink-TrimmedAquaBirthdayCake.png"
+        },
+        {
+            name: "Thai Script Celebration Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/ThaiScriptCelebrationCake.png"
+        },
+        {
+            name: "Teal Blue Birthday Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/TealBlueBirthdayCake.png"
+        },
+        {
+            name: "Graduation Celebration Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/GraduationCelebrationCake.png"
+        },
+        {
+            name: "Speckled Congratulations Celebration Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/SpeckledCongratulationsCelebrationCake.png"
+        },
+        {
+            name: "Turquoise Thank You Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/TurquoiseThankYouCake.png"
+        },
+        {
+            name: "Pink and Green Birthday Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/PinkandGreenBirthdayCake.png"
+        },
+        {
+            name: "Pink Rose Congratulations Celebration Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/PinkRoseCongratulationsCelebrationCake.png"
+        },
+        {
+            name: "Simple Happy Birthday",
+            price: "KShs 2,500.00",
+            image: "VANILLA/SimpleHappyBirthday.png"
+        },
+        {
+            name: "Rainbow Sprinkle Pink Celebration Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/RainbowSprinklePinkCelebrationCake.png"
+        },
+        {
+            name: "Lavender and Yellow Birthday Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/LavenderandYellowBirthdayCake.png"
+        },
+        {
+            name: "Warm Candlelit Rosette Celebration Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/WarmCandlelitRosetteCelebrationCake.png"
+        },
+        {
+            name: "Green-Trimmed Happy Birthday Denis Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/Green-TrimmedHappyBirthdayDenisCake.png"
+        },
+        {
+            name: "Turquoise Birthday Cake with Piped Elegance",
+            price: "KShs 2,500.00",
+            image: "VANILLA/TurquoiseBirthdayCakewithPipedElegance.png"
+        },
+        {
+            name: "Yellow and Black Graduation Celebration Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/YellowandBlackGraduationCelebrationCake.png"
+        },
+        {
+            name: "Simple and Elegant Pink Rose Birthday Cake",
+            price: "KShs 2,500.00",
+            image: "VANILLA/SimpleandElegantPinkRoseBirthdayCake.png"
+        },
+        {
+            name: "Pre-cut Treats",
+            price: "<p>KSh 70 per piece<br>50 pieces KSh 3,500<br>Pre-Cut Slices Included with Every Cake Order<br>No Cutting, No Hassle<br>Neatly packed in bags of your preferred colour</p>",
+            image: "VANILLA/Pre-cuts.jpeg"
+        },     
+    ],
+
+
+     "Marble Cakes": [
+
+        {
+            name: "Blueberry and Vanilla Marble Cake",
+            price: "KShs 2,500.00",
+            image: "MARBLE CAKES/BlueberryandVanillaMarbleCake.jpg"
+        },
+{
+            name: "Blueberry and Vanilla Marble Gradutaion Cake",
+            price: "KShs 2,500.00",
+            image: "MARBLE CAKES/BlueberryandVanillaMarbleGradutaionCake.jpg"
+        },
+        {
+            name: "Chocolate and Vanilla Marble Loaf Cake",
+            price: "KShs 2,500.00",
+            image: "MARBLE CAKES/ChocolateandVanillaMarbleLoafCake.jpeg"
+        },
+        {
+            name: "Strawberry and Vanilla Bundt Marble Cake",
+            price: "KShs 2,500.00",
+            image: "MARBLE CAKES/StrawberryandVanillaBundtMarbleCake.png"
+        },
+        {
+            name: "Strawberry and Vanilla Marble Cake",
+            price: "KShs 2,500.00",
+            image: "MARBLE CAKES/StrawberryandVanillaMarbleCake.jpeg"
+        },
+        {
+            name: "Strawberry Cake",
+            price: "KShs 2,500.00",
+            image: "MARBLE CAKES/StrawberryCake.jpeg"
+        },
+        {
+            name: "Vanilla and Strawberry Heart Shaped Birthday Marble Cake",
+            price: "KShs 2,500.00",
+            image: "MARBLE CAKES/VanillaandStrawberryHeartShapedBirthdayMarbleCake.png"
+        },
+        {
+            name: "Vanilla Chocolate BlueBerry and Strawberry Marble Cake",
+            price: "KShs 2,500.00",
+            image: "MARBLE CAKES/VanillaChocolateBlueBerryandStrawberryMarbleCake.jpeg"
+        },
+        {
+            name: "Blue Ruffled Chocolate and Vanilla marble Birthday Cake",
+            price: "KShs 2,500.00",
+            image: "MARBLE CAKES/BlueRuffledChocolateandVanillamarbleBirthdayCake.png"
+        },
+        {
+            name: "Vanilla and BlueBerry Marble Cake with Blue and Gold Decoration",
+            price: "KShs 2,500.00",
+            image: "MARBLE CAKES/VanillaandBlueBerryMarbleCakewithBlueandGoldDecoration.png"
+        },
+        {
+            name: "Blue Fish Themed Congratulations Cake",
+            price: "KShs 2,500.00",
+            image: "MARBLE CAKES/BlueFishThemedCongratulationsCake.png"
+        },
+        {
+            name: "Warm Lime Bundt Cake",
+            price: "KShs 2,500.00",
+            image: "MARBLE CAKES/WarmLimeBundtCakeSlice.png"
+        },
+        {
+            name: "Orange Flavoured Purple Birthday Cake",
+            price: "KShs 2,500.00",
+            image: "MARBLE CAKES/OrangeFlavouredPurpleBirthdayCake.png"
+        },
+        {
+            name: "2-Tier Strawberry and Vanilla MarbleCake",
+            price: "KShs 5,000.00",
+            image: "MARBLE CAKES/2-TierStrawberryandVanillaMarbleCake.png"
+        },
+        {
+            name: "Orange and Chocolate Hand-Piped Birthday Marble Cake",
+            price: "KShs 2,500.00",
+            image: "MARBLE CAKES/OrangeandChocolateHand-PipedBirthdayMarbleCake.png"
+        },
+        {
+            name: "Strawberry and Vanilla Pink Rose Birthday Marble Cake",
+            price: "KShs 2,500.00",
+            image: "MARBLE CAKES/StrawberryandVanillaPinkRoseBirthdayMarbleCake.png"
+        },
+        {
+            name: "Orange and Vanilla Hand-Piped Simple Birthday Marble Cake",
+            price: "KShs 2,500.00",
+            image: "MARBLE CAKES/OrangeandVanillaHand-PipedSimpleBirthdayMarbleCake.png"
+        },
+        {
+            name: "Strawberry and Vanilla Pink Floral Birthday Marble Cake",
+            price: "KShs 2,500.00",
+            image: "MARBLE CAKES/StrawberryandVanillaPinkFloralBirthdayMarbleCake.png"
+        },
+        {
+            name: "Orange Flavoured Purple Birthday Cake",
+            price: "KShs 2,500.00",
+            image: "MARBLE CAKES/OrangeFlavouredPurpleBirthdayCake.png"
+        },
+        {
+            name: "Chocolate and Vanilla Marble Happy Birthday Cake",
+            price: "KShs 2,500.00",
+            image: "MARBLE CAKES/ChocolateandVanillaMarbleHappyBirthdayCake.png"
+        },
+        {
+            name: "Passion Fruit Bundt Cake with Glazed Passion Fruit",
+            price: "Kshs 2,500.00",
+            image: "MARBLE CAKES/PassionFruitBundtCakewithGlazedPassionFruit.png"
+        },
+        {
+            name: "Pre-cut Treats",
+            price: "<p>KSh 70 per piece<br>50 pieces KSh 3,500<br>Pre-Cut Slices Included with Every Cake Order<br>No Cutting, No Hassle<br>Neatly packed in bags of your preferred colour</p>",
+            image: "VANILLA/Pre-cuts.jpeg"
+        },
+    ],
+
+
+    "Fruit Cakes": [
+
+        {
+            name: "Christmas Fruit Cake",
+            price: "KShs 5,000.00",
+            image: "FRUIT CAKES/ChristmasFruitCake.png"
+        },   
+        {
+            name: "Almond Fruit Bundt Cake",
+            price: "KShs 5,000.00",
+            image: "FRUIT CAKES/AlmondFruitBundtCake.jpg"
+        },
+        {
+            name: "Classic Fruit Cake",
+            price: "KShs 5,000.00",
+            image: "FRUIT CAKES/FruitCake.png"
+        },
+        {
+            name: "Bundt Fruit Cake",
+            price: "KShs 5,000.00",
+            image: "FRUIT CAKES/FruitCakeBundt.jpg"
+        },
+        {
+            name: "Fruit Cake with Nuts",
+            price: "KShs 5,000.00",
+            image: "FRUIT CAKES/FruitCakewithNuts.png"
+        },
+        {
+            name: "Fruit Loaf Cake",
+            price: "KShs 5,000.00",
+            image: "FRUIT CAKES/FruitLoafCake.jpg"
+        },
+        {
+            name: "Simple Fruit Cake",
+            price: "KShs 5,000.00",
+            image: "FRUIT CAKES/SimpleFruitCake.jpg"
+        }
+    ],
+
+
+    "Sweet Pies": [
+
+        {
+            name: "Apple Pie",
+            price: "KShs 5,000.00",
+            image: "PIES/ApplePie.png"
+        },
+
+        {
+            name: "Berry Berry Pear Pie",
+            price: "KShs 5,000.00",
+            image: "PIES/BerryBerryPearPie.png"
+        },
+        {
+            name: "Berry Berry Pie",
+            price: "KShs 5,000.00",
+            image: "PIES/BerryBerryPie.png"
+        },
+        {
+            name: "Nectarine with Raspberry Pie",
+            price: "KShs 5,000.00",
+            image: "PIES/NectarinewithRasberryPie.png"
+        },
+        {
+            name: "Pear Pie",
+            price: "KShs 5,000.00",
+            image: "PIES/PearPie.png"
+        },
+        {
+            name: "Simple Strawberry Pie",
+            price: "KShs 5,000.00",
+            image: "PIES/SimpleStrawberryPie.jpg"
+        },
+
+    ],
+
+
+    "Christmas and Easter Cakes": [
+        {
+            name: "Christmas Fruit Cake",
+            price: "KShs 5,000.00",
+            image: "CHRISTMAS and EASTER/ChristmasFruitCake.png"
+        },
+        {
+            name: "Christmas Cake",
+            price: "KShs 2,500.00",
+            image: "CHRISTMAS and EASTER/ChristmasCake.png"
+        },
+        {
+            name: "Festive Merry Christmas Chocolate Heart-shaped Cake",
+            price: "Kshs 2,500.00",
+            image: "CHRISTMAS and EASTER/FestiveMerryChristmasHeartCake.png"
+        },
+        {
+            name: "Christmas Log Cake",
+            price: "KShs 2,800.00",
+            image: "CHRISTMAS and EASTER/ChristmasLogCake.png"
+        },
+
+        {
+            name: "Easter Cake",
+            price: "KShs 2,500.00",
+            image: "CHRISTMAS and EASTER/EasterCake.png"
+        },
+        {
+            name: "Easter Chocolate Basket Weave Cake",
+            price: "KShs 2,500.00",
+            image: "CHRISTMAS and EASTER/EasterChocolateBasketWeaveCake.png"
+        },
+        {
+            name: "Easter Log Cake",
+            price: "KShs 2,500.00",
+            image: "CHRISTMAS and EASTER/EasterLogCake.png"
+        },
+        {
+            name: "24 Pack Easter Cookies",
+            price: "24-piece box KSh 2,600<br>12-piece box KSh 1,800",
+            image: "CHRISTMAS and EASTER/24PackEasterCookies.jpeg"
+        },
+        {
+            name: "Christmas Cookies",
+            price: "KShs 150 per piece",
+            image: "CHRISTMAS and EASTER/ChristmasCookies.jpg"
+        },
+        {
+            name: "Christmas Cookies",
+            price: "KShs 1,200 per 10 piece pack",
+            image: "CHRISTMAS and EASTER/ChristmasCookies.png"
+        },
+        {
+            name: "Home-Made Easter Cookies",
+            price: "KShs 150 per piece<br>12-piece box KShs 1,800",
+            image: "CHRISTMAS and EASTER/Home-MadeEasterCookies.jpeg"
+        },
+        {
+            name: "Xmas Cookies",
+            price: "KShs 150 per piece<br>12-piece box KShs 1,800",
+            image: "CHRISTMAS and EASTER/XmasCookies.jpg"
+        },
+        {
+            name: "Pre-cut Treats",
+            price: "<p>KSh 70 per piece<br>50 pieces KSh 3,500<br>Pre-Cut Slices Included with Every Cake Order<br>No Cutting, No Hassle<br>Neatly packed in bags of your preferred colour></p>",
+            image: "VANILLA/Pre-cuts.jpeg"
+        },
+    ],
+
+
+    "Yule Log Cakes and Swiss Rolls": [
+
+        {
+            name: "Chocolate Swissroll with Buttercream filling",
+            price: "KShs 2000.00",
+            image: "SWISSROLL/ChocolateSwissrollwithButtercreamfilling.jpeg"
+        },
+        {
+            name: "Cozy Chocolate Swisr Roll",
+            price: "KShs 2000.00",
+            image: "SWISSROLL/CozyChocolateSwissRoll.png"
+        },
+        {
+            name: "Chocolate Swissroll with Chocolate Ganache",
+            price: "KShs 2000.00",
+            image: "SWISSROLL/ChocolateSwissrollwithChocolateGanache.jpeg"
+        },
+        {
+            name: "Chocolate Swissroll with Chocolate Ganache and Whipping Cream filling",
+            price: "KShs 2000.00",
+            image: "SWISSROLL/ChocolateSwissrollwithChocolateGanacheandWhippingCreamfilling.jpeg"
+        },
+        {
+            name: "Vanilla SwissRoll with Chocolate ganache and Whipping cream filling",
+            price: "KShs 2000.00",
+            image: "SWISSROLL/VanillaSwissRollwithChocolateganacheandWhippingcreamfilling.jpg"
+        },
+        {
+            name: "Easter Log Cake",
+            price: "KShs 2,500.00",
+            image: "SWISSROLL/EasterLogCake.png"
+        },
+        {
+            name: "Christmas Log Cake",
+            price: "KShs 2,800.00",
+            image: "SWISSROLL/ChristmasLogCake.png"
+        },
+
+    ]
+};
+
+/* =========================================
+   DISPLAY CATEGORY
+========================================= */
+
+function showCategory(category, button) {
+
+    const grid = document.getElementById("cakeGrid");
+    const title = document.getElementById("categoryTitle");
+    const breadcrumb = document.getElementById("breadcrumbCategory");
+
+    /* Change heading */
+    title.textContent = category;
+    breadcrumb.textContent = category;
+
+    /* Change active sidebar button */
+    document.querySelectorAll(".category-btn").forEach(btn => {
+        btn.classList.remove("active");
+    });
+
+    if (button) {
+        button.classList.add("active");
+    }
+
+    /* Get cakes for selected category */
+    const categoryCakes = cakes[category] || [];
+
+    /* Clear old cakes */
+    grid.innerHTML = "";
+
+    /* If there are no cakes */
+    if (categoryCakes.length === 0) {
+
+        grid.innerHTML = `
+            <div class="no-cakes">
+                Cakes coming soon.
+            </div>
+        `;
+
+        return;
+    }
+
+    /* Create each cake */
+    categoryCakes.forEach(cake => {
+
+        const card = document.createElement("div");
+        card.className = "cake-card";
+
+        card.innerHTML = `
+            <img
+                src="${cake.image}"
+                alt="${cake.name}"
+                class="cake-image"
+            >
+
+            <div class="card-zoom-icon">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>
+            </div>
+
+            <div class="cake-info">
+
+                <div class="cake-name">
+                    ${cake.name}
+                </div>
+
+                <div class="cake-price">
+                    ${cake.price}
+                </div>
+
+            </div>
+        `;
+
+        /* Get the image we just created */
+        const image = card.querySelector(".cake-image");
+        const zoomIcon = card.querySelector(".card-zoom-icon");
+
+        /* OPEN POPUP */
+        image.addEventListener("click", function () {
+
+            openPopup(
+                cake.image,
+                cake.name,
+                cake.price
+            );
+
+        });
+
+        zoomIcon.addEventListener("click", function (e) {
+            e.stopPropagation();
+            openPopup(
+                cake.image,
+                cake.name,
+                cake.price
+            );
+        });
+        grid.appendChild(card);
+
+    });
+}
+
+/* =========================================
+   CAKE CLICK
+========================================= */
+
+function openCake(cake) {
+
+    /*
+       For now this keeps everything on
+       the SAME PAGE.
+
+       We can later make this open a
+       beautiful cake-detail panel.
+    */
+
+    console.log("Selected cake:", cake.name);
+
+}
+
+
+/* =========================================
+   INITIAL LOAD
+========================================= */
+const urlParams = new URLSearchParams(window.location.search);
+
+const selectedCategory =
+    urlParams.get("category") || "Chocolate Cakes";
+
+showCategory(selectedCategory);
+
+function openPopup(image, name, price) {
+    const popup = document.getElementById("cakePopup");
+    const popupImage = document.getElementById("popupImage");
+    const popupName = document.getElementById("popupName");
+    const popupPrice = document.getElementById("popupPrice");
+    const popupWhatsapp = document.getElementById("popupWhatsapp");
+
+    /* Put the selected cake information into the popup */
+    popupImage.src = image;
+    popupImage.alt = name;
+    popupName.textContent = name;
+    popupPrice.innerHTML = price;
+
+    /* Create a pre-filled WhatsApp order message */
+    const message =
+        `Hello Ample Cakes, I would like to order the "${name}" for ${price.replace(/<br\s*\/?>/gi, " / ")}.`;
+    const whatsappUrl =
+        "https://wa.me/254775789757?text=" + encodeURIComponent(message);
+    popupWhatsapp.href = whatsappUrl;
+
+    popup.classList.add("active");
+    document.body.style.overflow = "hidden";
+}
+
+
+function closePopup() {
+
+    const popup =
+        document.getElementById("cakePopup");
+
+    popup.classList.remove("active");
+
+    document.body.style.overflow = "";
+
+}
+
+/* Close when clicking outside the popup content */
+document.getElementById("cakePopup").addEventListener("click", function (event) {
+    if (event.target === this) {
+        closePopup();
+    }
+});
+
+/* Close with the Escape key */
+document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+        closePopup();
+    }
+});
+</script>
+</body>
+</html>
